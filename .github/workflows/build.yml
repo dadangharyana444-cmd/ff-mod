@@ -15,12 +15,12 @@ jobs:
           wget -q https://dl.google.com/android/repository/android-ndk-r26b-linux.zip
           echo "Mengekstrak NDK..."
           unzip -q android-ndk-r26b-linux.zip
-          echo "NDK siap digunakan."
 
       - name: Compile Shared Library
         run: |
-          # Kompilasi langsung menggunakan NDK resmi yang baru diunduh
-          ./android-ndk-r26b-linux/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android24-clang++ \
+          # Temukan jalur otomatis binary clang++ di dalam folder NDK dan kompilasi
+          NDK_PATH=$(pwd)/android-ndk-r26b
+          $NDK_PATH/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android24-clang++ \
           -shared -fPIC ff_combat_patch.cpp \
           -o libcombat_patch.so \
           -llog -O3
