@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Android NDK
-        uses: nttld/setup-ndk@v3
+        uses: nttld/setup-ndk@v2
         id: setup-ndk
         with:
           ndk-version: r26b
@@ -29,4 +29,3 @@ jobs:
         with:
           name: combat-lib
           path: libcombat_patch.so
-          
