@@ -71,3 +71,4 @@ __attribute__((constructor)) void init_combat_mod() {
     // Alamat offset fungsi target dapat disesuaikan dengan hasil analisis libil2cpp.so 
     // menggunakan disassembler seperti Ghidra atau IDA Pro.
 }
+
